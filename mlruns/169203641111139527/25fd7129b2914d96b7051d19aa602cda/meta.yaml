@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/25fd7129b2914d96b7051d19aa602cda/artifacts
+end_time: 1762869221610
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 25fd7129b2914d96b7051d19aa602cda
+run_name: sneaky-frog-741
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869221474
+status: 3
+tags: []
+user_id: 7assa

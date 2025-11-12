@@ -1,0 +1,4 @@
+
+# Docker Deployment Commands
+docker build -t iris-classifier:v1 -f deployment/Dockerfile .
+docker run -p 5001:5001 iris-classifier:v1

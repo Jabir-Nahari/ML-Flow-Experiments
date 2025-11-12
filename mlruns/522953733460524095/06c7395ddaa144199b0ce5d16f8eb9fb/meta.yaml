@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/522953733460524095/06c7395ddaa144199b0ce5d16f8eb9fb/artifacts
+end_time: 1762869189080
+entry_point_name: ''
+experiment_id: '522953733460524095'
+lifecycle_stage: active
+run_id: 06c7395ddaa144199b0ce5d16f8eb9fb
+run_name: angry-crane-880
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869188776
+status: 3
+tags: []
+user_id: 7assa

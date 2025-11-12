@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/522953733460524095/46ba17a86e904214a40505d1abbd9cfc/artifacts
+end_time: 1762869194329
+entry_point_name: ''
+experiment_id: '522953733460524095'
+lifecycle_stage: active
+run_id: 46ba17a86e904214a40505d1abbd9cfc
+run_name: victorious-hen-350
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869194041
+status: 3
+tags: []
+user_id: 7assa

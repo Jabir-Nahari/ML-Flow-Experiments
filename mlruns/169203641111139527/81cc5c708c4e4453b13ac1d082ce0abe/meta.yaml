@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/81cc5c708c4e4453b13ac1d082ce0abe/artifacts
+end_time: 1762869215238
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 81cc5c708c4e4453b13ac1d082ce0abe
+run_name: stately-vole-681
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869215089
+status: 3
+tags: []
+user_id: 7assa

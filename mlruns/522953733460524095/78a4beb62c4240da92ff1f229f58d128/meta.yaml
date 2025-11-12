@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/522953733460524095/78a4beb62c4240da92ff1f229f58d128/artifacts
+end_time: 1762869330398
+entry_point_name: ''
+experiment_id: '522953733460524095'
+lifecycle_stage: active
+run_id: 78a4beb62c4240da92ff1f229f58d128
+run_name: thundering-pig-505
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869330007
+status: 3
+tags: []
+user_id: 7assa

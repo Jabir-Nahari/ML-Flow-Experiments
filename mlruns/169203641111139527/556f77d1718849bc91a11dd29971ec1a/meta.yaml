@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/556f77d1718849bc91a11dd29971ec1a/artifacts
+end_time: 1762869208254
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 556f77d1718849bc91a11dd29971ec1a
+run_name: hilarious-ape-986
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869208114
+status: 3
+tags: []
+user_id: 7assa

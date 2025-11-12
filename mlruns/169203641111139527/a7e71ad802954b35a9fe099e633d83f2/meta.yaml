@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/a7e71ad802954b35a9fe099e633d83f2/artifacts
+end_time: 1762869227513
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: a7e71ad802954b35a9fe099e633d83f2
+run_name: magnificent-hog-585
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869227356
+status: 3
+tags: []
+user_id: 7assa

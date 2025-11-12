@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/6e82596a1c0b41aeb953d911f8dca5c0/artifacts
+end_time: 1762869191750
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: 6e82596a1c0b41aeb953d911f8dca5c0
+run_name: enchanting-shad-734
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869191452
+status: 3
+tags: []
+user_id: 7assa
