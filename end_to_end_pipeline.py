@@ -175,6 +175,17 @@ class ModelTrainer:
         self.metrics = {}
         self.validator = validator or ModelValidator()
 
+    def load_model_from_artifacts(self, artifacts_path='artifacts'):
+        """Load pre-trained model from artifacts folder."""
+        import joblib
+        model_path = os.path.join(artifacts_path, 'model.pkl')
+        if os.path.exists(model_path):
+            self.model = joblib.load(model_path)
+            logger.info(f"Model loaded from {model_path}")
+            return self.model
+        else:
+            raise FileNotFoundError(f"Model file not found at {model_path}")
+
     def train_model(self, model_type='random_forest', **model_params):
         """Train the model with validation."""
         with ErrorHandler("model_training", None, None):  # MLflow logger will be set later
@@ -371,7 +382,9 @@ class PipelineOrchestrator:
             },
             'model': {
                 'type': 'random_forest',
-                'params': {'n_estimators': 100, 'random_state': 42}
+                'params': {'n_estimators': 100, 'random_state': 42},
+                'load_from_artifacts': True,  # Load pre-trained model from artifacts folder
+                'artifacts_path': 'artifacts'
             },
             'validation': {
                 'accuracy_threshold': 0.5,
@@ -436,11 +449,21 @@ class PipelineOrchestrator:
                     eh.mlflow_logger.log_validation_results('data_preprocessing', feature_validation)
 
             # 3. Model Training and Evaluation with validation
-            logger.info("Step 3: Model Training")
+            logger.info("Step 3: Model Training or Loading")
             with ErrorHandler("pipeline_model_training", None, self.resource_monitor) as eh:
                 trainer = ModelTrainer(X_train, X_test, y_train, y_test, validator=self.model_validator)
-                model = trainer.train_model(**self.config['model'])
-                metrics = trainer.evaluate_model(accuracy_threshold=self.config.get('validation', {}).get('accuracy_threshold', 0.5))
+
+                # Check if we should load from artifacts instead of training
+                if self.config['model'].get('load_from_artifacts', False):
+                    logger.info("Loading pre-trained model from artifacts...")
+                    model = trainer.load_model_from_artifacts(self.config['model'].get('artifacts_path', 'artifacts'))
+                    # For loaded models, we still need to evaluate on the current data
+                    metrics = trainer.evaluate_model(accuracy_threshold=self.config.get('validation', {}).get('accuracy_threshold', 0.5))
+                else:
+                    logger.info("Training new model...")
+                    model = trainer.train_model(**self.config['model'])
+                    metrics = trainer.evaluate_model(accuracy_threshold=self.config.get('validation', {}).get('accuracy_threshold', 0.5))
+
                 self.components['trainer'] = trainer
 
                 # Log model validation results
@@ -449,52 +472,59 @@ class PipelineOrchestrator:
                     eh.mlflow_logger.log_validation_results('model_training', model_validation)
 
             # 4. MLflow Logging with enhanced error handling and QA
-            logger.info("Step 4: MLflow Logging with QA")
-            with ErrorHandler("pipeline_mlflow_logging", None, self.resource_monitor) as eh:
-                mlflow_manager = MLflowManager(self.config['mlflow']['experiment_name'])
-                mlflow_manager.setup_experiment()
-                mlflow_manager.start_run()
+            run_id = None
+            if not self.config['model'].get('load_from_artifacts', False):
+                logger.info("Step 4: MLflow Logging with QA")
+                with ErrorHandler("pipeline_mlflow_logging", None, self.resource_monitor) as eh:
+                    mlflow_manager = MLflowManager(self.config['mlflow']['experiment_name'])
+                    mlflow_manager.setup_experiment()
+                    mlflow_manager.start_run()
 
-                # Initialize MLflow error logger
-                self.mlflow_logger = MLflowErrorLogger(mlflow_manager.run_id)
+                    # Initialize MLflow error logger
+                    self.mlflow_logger = MLflowErrorLogger(mlflow_manager.run_id)
 
-                # Log system health before pipeline execution
-                self.qa_monitor.log_health_to_mlflow(mlflow_manager.run_id)
+                    # Log system health before pipeline execution
+                    self.qa_monitor.log_health_to_mlflow(mlflow_manager.run_id)
 
-                # Log parameters
-                pipeline_params = {
-                    'data_source': self.config['data']['source'],
-                    'model_type': self.config['model']['type'],
-                    'test_size': self.config['preprocessing']['test_size'],
-                    'random_state': self.config['preprocessing']['random_state'],
-                    'qa_enabled': True,
-                    'error_handling_enabled': True
-                }
-                pipeline_params.update(self.config['model']['params'])
-                mlflow_manager.log_parameters(pipeline_params)
+                    # Log parameters
+                    pipeline_params = {
+                        'data_source': self.config['data']['source'],
+                        'model_type': self.config['model']['type'],
+                        'test_size': self.config['preprocessing']['test_size'],
+                        'random_state': self.config['preprocessing']['random_state'],
+                        'qa_enabled': True,
+                        'error_handling_enabled': True,
+                        'loaded_from_artifacts': False
+                    }
+                    pipeline_params.update(self.config['model']['params'])
+                    mlflow_manager.log_parameters(pipeline_params)
 
-                # Log metrics
-                mlflow_manager.log_metrics(metrics)
+                    # Log metrics
+                    mlflow_manager.log_metrics(metrics)
 
-                # Log model
-                mlflow_manager.log_model(model)
+                    # Log model
+                    mlflow_manager.log_model(model)
 
-                # Log final resource usage
-                final_resources = self.resource_monitor.get_resource_usage()
-                self.mlflow_logger.log_resource_usage(final_resources)
+                    # Log final resource usage
+                    final_resources = self.resource_monitor.get_resource_usage()
+                    self.mlflow_logger.log_resource_usage(final_resources)
 
-                # Get run ID for deployment
-                run_id = mlflow_manager.run_id
-                pipeline_result['run_id'] = run_id
+                    # Get run ID for deployment
+                    run_id = mlflow_manager.run_id
+                    pipeline_result['run_id'] = run_id
 
-                # End run
-                mlflow_manager.end_run()
-                self.components['mlflow_manager'] = mlflow_manager
+                    # End run
+                    mlflow_manager.end_run()
+                    self.components['mlflow_manager'] = mlflow_manager
+            else:
+                logger.info("Step 4: Skipping MLflow logging (using pre-trained model from artifacts)")
+                # Still initialize error logger for QA
+                self.mlflow_logger = None
 
             # 5. Model Deployment with error handling
             logger.info("Step 5: Model Deployment")
             model_uri = None
-            if self.config['deployment']['register_model']:
+            if self.config['deployment']['register_model'] and run_id is not None:
                 with ErrorHandler("pipeline_deployment", self.mlflow_logger, self.resource_monitor):
                     deployment_manager = DeploymentManager()
                     model_uri = deployment_manager.register_model(
@@ -503,6 +533,8 @@ class PipelineOrchestrator:
                     )
                     self.components['deployment_manager'] = deployment_manager
                     logger.info(f"Model deployed with URI: {model_uri}")
+            elif self.config['deployment']['register_model'] and self.config['model'].get('load_from_artifacts', False):
+                logger.info("Skipping model registration (using pre-trained model from artifacts)")
 
             # Run final QA checks
             logger.info("Step 6: Final QA Validation")
@@ -576,7 +608,9 @@ def main():
         },
         'model': {
             'type': 'random_forest',
-            'params': {'n_estimators': 100, 'random_state': 42}
+            'params': {'n_estimators': 100, 'random_state': 42},
+            'load_from_artifacts': True,  # Load pre-trained model from artifacts folder
+            'artifacts_path': 'artifacts'
         },
         'validation': {
             'accuracy_threshold': 0.7,  # Higher threshold for QA
@@ -591,7 +625,7 @@ def main():
             'experiment_name': 'Wine_Classification_Pipeline_QA'
         },
         'deployment': {
-            'register_model': True,
+            'register_model': False,  # Skip registration when using pre-trained model
             'model_name': 'WineClassifier'
         },
         'error_handling': {
