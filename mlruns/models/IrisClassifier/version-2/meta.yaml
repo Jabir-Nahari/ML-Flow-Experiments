@@ -2,7 +2,7 @@ creation_timestamp: 1762932819282
 current_stage: Staging
 deployment_job_state: null
 description: Improved model, testing in staging
-last_updated_timestamp: 1762951682531
+last_updated_timestamp: 1763161918631
 model_id: m-adcb7718bff74bebaeab4d98f6608da4
 name: IrisClassifier
 run_id: b2e64e3cd88e46e399bab1c6261f4222

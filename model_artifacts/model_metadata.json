@@ -1,7 +1,7 @@
 {
   "model_name": "IrisClassifier",
   "version": "3 (Production)",
-  "training_date": "2025-11-12T15:48:03.664022",
+  "training_date": "2025-11-15T02:12:17.640343",
   "framework": "scikit-learn",
   "algorithm": "RandomForestClassifier",
   "metrics": {
