@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/6499dbf0697d457cac23fea9c632ef04/artifacts
+end_time: 1762869222242
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 6499dbf0697d457cac23fea9c632ef04
+run_name: victorious-mole-184
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869222130
+status: 3
+tags: []
+user_id: 7assa

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/9723e4ded94b4aa0af273198b8cb0b46/artifacts
+end_time: 1762869208713
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 9723e4ded94b4aa0af273198b8cb0b46
+run_name: victorious-gull-317
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869208595
+status: 3
+tags: []
+user_id: 7assa

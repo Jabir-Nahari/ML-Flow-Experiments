@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/3b1e1bb93f974b2a83e720755a2674c1/artifacts
+end_time: 1762869325473
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: 3b1e1bb93f974b2a83e720755a2674c1
+run_name: funny-duck-940
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869325216
+status: 3
+tags: []
+user_id: 7assa

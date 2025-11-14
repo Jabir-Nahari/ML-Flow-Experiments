@@ -1,0 +1,12 @@
+
+# Model Serving Instructions
+# mlflow models serve -m models:/IrisClassifier/Production -p 5001 --no-conda
+# curl -X POST -H "Content-Type: application/json" \
+#      --data '{"dataframe_split": {"columns": ["sepal length (cm)", "sepal width (cm)", "petal length (cm)", "petal width (cm)"], "data": [[5.1, 3.5, 1.4, 0.2]]}}' \
+#      http://127.0.0.1:5001/invocations
+
+# Advanced Features (Student B Implementation):
+# 1. S3 Integration: Run python deployment/s3_setup.py for AWS S3 artifact storage
+# 2. Performance Testing: Run python deployment/serving_test.py for serving benchmarks
+# 3. A/B Testing: Run python deployment/ab_testing.py for model comparison
+# 4. Complete Demo: Run python student_b_completion.py for all features

@@ -1,0 +1,22 @@
+artifact_path: file:///Users/nawaf/Desktop/ICS%20474/ML-Flow-Experiments-hassan/mlruns/731658024109059339/models/m-055fcea41d56425d9caa1f630a47947a/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.6.0
+model_id: m-055fcea41d56425d9caa1f630a47947a
+model_size_bytes: 98202
+model_uuid: m-055fcea41d56425d9caa1f630a47947a
+prompts: null
+run_id: 07c24fd5b604440da5d8951a3e6a78d8
+utc_time_created: '2025-11-14 09:35:35.139884'

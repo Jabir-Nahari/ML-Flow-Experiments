@@ -1,0 +1,10 @@
+artifact_location: file:///Users/nawaf/Desktop/ICS%20474/ML-Flow-Experiments-hassan/mlruns/374204603769317084/models/m-b30f499ae66a40cbb171263260490958/artifacts
+creation_timestamp: 1763112912525
+experiment_id: '374204603769317084'
+last_updated_timestamp: 1763112914340
+model_id: m-b30f499ae66a40cbb171263260490958
+model_type: null
+name: model
+source_run_id: 676412df4e88437c8ab816cfb4a09d18
+status: 2
+status_message: null

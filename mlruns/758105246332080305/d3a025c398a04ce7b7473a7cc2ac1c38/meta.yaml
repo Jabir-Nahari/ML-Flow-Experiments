@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/nawaf/Desktop/ICS%20474/ML-Flow-Experiments-hassan/mlruns/758105246332080305/d3a025c398a04ce7b7473a7cc2ac1c38/artifacts
+end_time: 1763112912436
+entry_point_name: ''
+experiment_id: '758105246332080305'
+lifecycle_stage: active
+run_id: d3a025c398a04ce7b7473a7cc2ac1c38
+run_name: nimble-elk-76
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763112909829
+status: 3
+tags: []
+user_id: nawaf

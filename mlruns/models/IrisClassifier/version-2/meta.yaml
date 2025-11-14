@@ -1,0 +1,15 @@
+creation_timestamp: 1762932819282
+current_stage: Staging
+deployment_job_state: null
+description: Improved model, testing in staging
+last_updated_timestamp: 1762951682531
+model_id: m-adcb7718bff74bebaeab4d98f6608da4
+name: IrisClassifier
+run_id: b2e64e3cd88e46e399bab1c6261f4222
+run_link: ''
+source: models:/m-adcb7718bff74bebaeab4d98f6608da4
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/244918341474380135/models/m-adcb7718bff74bebaeab4d98f6608da4/artifacts
+user_id: null
+version: 2

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/05bee106c4394992ba851b71b3db543b/artifacts
+end_time: 1762869202275
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 05bee106c4394992ba851b71b3db543b
+run_name: sincere-carp-197
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869202085
+status: 3
+tags: []
+user_id: 7assa

@@ -1,0 +1,1446 @@
+2025-11-12 23:26:34,202 - INFO - Using default configuration
+2025-11-12 23:26:34,203 - INFO - 🎯 Starting Complete ML Workflow
+2025-11-12 23:26:34,203 - INFO - ============================================================
+2025-11-12 23:26:34,203 - INFO - 
+📋 Step 1: Environment Setup
+2025-11-12 23:26:34,203 - INFO - 🔧 Setting up ML environment...
+2025-11-12 23:26:34,203 - INFO - MLflow tracking URI set to: sqlite:///mlruns/mlflow.db
+2025-11-12 23:26:34,203 - INFO - Setting up S3 artifact storage...
+2025-11-12 23:26:34,203 - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-11-12 23:26:34,205 - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-11-12 23:26:34,205 - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-11-12 23:26:34,206 - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-11-12 23:26:34,206 - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-11-12 23:26:34,207 - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-11-12 23:26:34,207 - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-11-12 23:26:34,209 - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-11-12 23:26:34,209 - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-11-12 23:26:34,209 - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-11-12 23:26:34,209 - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-11-12 23:26:34,213 - DEBUG - IMDS ENDPOINT: http://169.254.169.254/
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: env
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:26:34,215 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:26:34,216 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:26:34,216 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:26:34,216 - DEBUG - Starting new HTTP connection (1): 169.254.169.254:80
+2025-11-12 23:26:35,225 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x11a006120>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:26:35,237 - DEBUG - Starting new HTTP connection (2): 169.254.169.254:80
+2025-11-12 23:26:36,239 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x119dff110>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:26:36,246 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:26:36,251 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-11-12 23:26:36,277 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-11-12 23:26:36,279 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x119d6cc20>
+2025-11-12 23:26:36,359 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-11-12 23:26:36,368 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-11-12 23:26:36,385 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-11-12 23:26:36,390 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-11-12 23:26:36,398 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x119ce89a0>
+2025-11-12 23:26:36,398 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x11a024a40>
+2025-11-12 23:26:36,447 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x119ce8720>
+2025-11-12 23:26:36,447 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:26:36,447 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:26:36,447 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:26:36,447 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:26:36,448 - DEBUG - No configured endpoint found.
+2025-11-12 23:26:36,449 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:26:36,452 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-11-12 23:26:36,452 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:26:36,452 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:26:36,453 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function validate_bucket_name at 0x119d6d580>
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function remove_bucket_from_url_paths_from_model at 0x119d6f880>
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x11ab66cf0>>
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x11a005940>>
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function generate_idempotent_uuid at 0x119d6d3a0>
+2025-11-12 23:26:36,453 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function _handle_request_validation_mode_member at 0x119d6ff60>
+2025-11-12 23:26:36,453 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x119d6fa60>
+2025-11-12 23:26:36,454 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x11ab66cf0>>
+2025-11-12 23:26:36,454 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:26:36,454 - DEBUG - Endpoint provider result: https://s3.amazonaws.com
+2025-11-12 23:26:36,454 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:26:36,454 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:26:36,455 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_expect_header at 0x119d6d940>
+2025-11-12 23:26:36,455 - DEBUG - Event before-call.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x11ab66e40>>
+2025-11-12 23:26:36,455 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_recursion_detection_header at 0x119d6cea0>
+2025-11-12 23:26:36,455 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function inject_api_version_header_if_needed at 0x119d6ee80>
+2025-11-12 23:26:36,455 - DEBUG - Making request for OperationModel(name=ListBuckets) with params: {'url_path': '/', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/D,Z,b cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'url': 'https://s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x11ab65010>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': None, 'params': {}}, 'input_params': {}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:26:36,455 - DEBUG - Event request-created.s3.ListBuckets: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x11ab64ec0>>
+2025-11-12 23:26:36,455 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x11a005940>>
+2025-11-12 23:26:36,455 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <function set_operation_specific_signer at 0x119d6d120>
+2025-11-12 23:26:36,455 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function remove_arn_from_signing_path at 0x119d6f9c0>
+2025-11-12 23:26:36,455 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function _set_extra_headers_for_unsigned_request at 0x119d78040>
+2025-11-12 23:26:36,455 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x11ab66e40>>
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: env
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:26:36,456 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:26:36,456 - DEBUG - Starting new HTTP connection (3): 169.254.169.254:80
+2025-11-12 23:26:37,459 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x11a96a210>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:26:37,465 - DEBUG - Starting new HTTP connection (4): 169.254.169.254:80
+2025-11-12 23:26:38,468 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x11a96bb10>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:26:38,475 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:26:38,476 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x119d6cc20>
+2025-11-12 23:26:38,477 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x119ce89a0>
+2025-11-12 23:26:38,477 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x11a024a40>
+2025-11-12 23:26:38,477 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x119ce8720>
+2025-11-12 23:26:38,477 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:26:38,477 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:26:38,477 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:26:38,478 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:26:38,478 - DEBUG - No configured endpoint found.
+2025-11-12 23:26:38,480 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:26:38,483 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:26:38,483 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:26:38,484 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function validate_bucket_name at 0x119d6d580>
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function remove_bucket_from_url_paths_from_model at 0x119d6f880>
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x11ac1ce10>>
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x11a96bed0>>
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function generate_idempotent_uuid at 0x119d6d3a0>
+2025-11-12 23:26:38,485 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function _handle_request_validation_mode_member at 0x119d6ff60>
+2025-11-12 23:26:38,485 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x119d6fa60>
+2025-11-12 23:26:38,485 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x11ac1ce10>>
+2025-11-12 23:26:38,486 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'mlflow-artifacts-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:26:38,486 - DEBUG - Endpoint provider result: https://mlflow-artifacts-bucket.s3.amazonaws.com
+2025-11-12 23:26:38,486 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:26:38,486 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:26:38,487 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_expect_header at 0x119d6d940>
+2025-11-12 23:26:38,487 - DEBUG - Event before-call.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x11ac1cf50>>
+2025-11-12 23:26:38,487 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_recursion_detection_header at 0x119d6cea0>
+2025-11-12 23:26:38,487 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function inject_api_version_header_if_needed at 0x119d6ee80>
+2025-11-12 23:26:38,487 - DEBUG - Making request for OperationModel(name=HeadBucket) with params: {'url_path': '', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/D,Z,b cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'auth_path': '/mlflow-artifacts-bucket/', 'url': 'https://mlflow-artifacts-bucket.s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x11a96a210>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'mlflow-artifacts-bucket', 'params': {'Bucket': 'mlflow-artifacts-bucket'}}, 'input_params': {'Bucket': 'mlflow-artifacts-bucket'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:26:38,487 - DEBUG - Event request-created.s3.HeadBucket: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x11a96a350>>
+2025-11-12 23:26:38,487 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x11a96bed0>>
+2025-11-12 23:26:38,487 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <function set_operation_specific_signer at 0x119d6d120>
+2025-11-12 23:26:38,487 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function remove_arn_from_signing_path at 0x119d6f9c0>
+2025-11-12 23:26:38,488 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function _set_extra_headers_for_unsigned_request at 0x119d78040>
+2025-11-12 23:26:38,488 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x11ac1cf50>>
+2025-11-12 23:26:38,488 - WARNING - ⚠️  S3 setup failed, falling back to local storage
+2025-11-12 23:26:38,488 - INFO - .2f
+2025-11-12 23:26:38,488 - INFO - 
+🔬 Step 2: Pipeline Execution
+2025-11-12 23:26:38,488 - INFO - 🔬 Running ML Pipeline...
+2025-11-12 23:26:38,488 - INFO - 🚀 Starting End-to-End ML Pipeline
+2025-11-12 23:26:38,488 - INFO - ============================================================
+2025-11-12 23:26:38,488 - INFO - Step 1: Data Ingestion
+2025-11-12 23:26:38,488 - INFO - Using Wine dataset from sklearn
+2025-11-12 23:26:38,500 - INFO - Data loaded successfully. Shape: (178, 14)
+2025-11-12 23:26:38,500 - INFO - Step 2: Data Preprocessing
+2025-11-12 23:26:38,500 - INFO - Starting data preprocessing...
+2025-11-12 23:26:38,510 - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-12 23:26:38,510 - INFO - Step 3: Model Training
+2025-11-12 23:26:38,510 - INFO - Training random_forest model...
+2025-11-12 23:26:38,511 - ERROR - Error training model: RandomForestClassifier.__init__() got an unexpected keyword argument 'type'
+2025-11-12 23:26:38,511 - ERROR - Pipeline execution failed: RandomForestClassifier.__init__() got an unexpected keyword argument 'type'
+2025-11-12 23:26:38,511 - ERROR - ============================================================
+2025-11-12 23:26:38,511 - INFO - .2f
+2025-11-12 23:26:38,511 - ERROR - ❌ Pipeline execution failed: RandomForestClassifier.__init__() got an unexpected keyword argument 'type'
+2025-11-12 23:26:38,511 - ERROR - Workflow execution failed: Pipeline execution failed
+2025-11-12 23:26:38,511 - INFO - 
+============================================================
+2025-11-12 23:26:38,511 - ERROR - ❌ Workflow execution failed!
+2025-11-12 23:26:38,511 - INFO - .2f
+2025-11-12 23:26:53,971 - INFO - Using default configuration
+2025-11-12 23:26:53,971 - INFO - 🎯 Starting Complete ML Workflow
+2025-11-12 23:26:53,971 - INFO - ============================================================
+2025-11-12 23:26:53,971 - INFO - 
+📋 Step 1: Environment Setup
+2025-11-12 23:26:53,971 - INFO - 🔧 Setting up ML environment...
+2025-11-12 23:26:53,971 - INFO - MLflow tracking URI set to: sqlite:///mlruns/mlflow.db
+2025-11-12 23:26:53,971 - INFO - Setting up S3 artifact storage...
+2025-11-12 23:26:53,972 - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-11-12 23:26:53,974 - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-11-12 23:26:53,974 - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-11-12 23:26:53,975 - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-11-12 23:26:53,975 - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-11-12 23:26:53,976 - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-11-12 23:26:53,976 - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-11-12 23:26:53,979 - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-11-12 23:26:53,979 - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-11-12 23:26:53,979 - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-11-12 23:26:53,979 - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-11-12 23:26:53,984 - DEBUG - IMDS ENDPOINT: http://169.254.169.254/
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: env
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:26:53,987 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:26:53,988 - DEBUG - Starting new HTTP connection (1): 169.254.169.254:80
+2025-11-12 23:26:54,992 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x123515e80>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:26:55,008 - DEBUG - Starting new HTTP connection (2): 169.254.169.254:80
+2025-11-12 23:26:56,011 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x1234d7250>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:26:56,019 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:26:56,021 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-11-12 23:26:56,045 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-11-12 23:26:56,046 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x123440860>
+2025-11-12 23:26:56,077 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-11-12 23:26:56,086 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-11-12 23:26:56,106 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-11-12 23:26:56,110 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-11-12 23:26:56,111 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x1232c05e0>
+2025-11-12 23:26:56,111 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x123500220>
+2025-11-12 23:26:56,123 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x1232c0360>
+2025-11-12 23:26:56,123 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:26:56,123 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:26:56,123 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:26:56,123 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:26:56,123 - DEBUG - No configured endpoint found.
+2025-11-12 23:26:56,124 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:26:56,126 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-11-12 23:26:56,127 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:26:56,127 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:26:56,127 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function validate_bucket_name at 0x1234411c0>
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function remove_bucket_from_url_paths_from_model at 0x1234434c0>
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x12489ea50>>
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x1235156a0>>
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function generate_idempotent_uuid at 0x123440fe0>
+2025-11-12 23:26:56,128 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function _handle_request_validation_mode_member at 0x123443ba0>
+2025-11-12 23:26:56,128 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x1234436a0>
+2025-11-12 23:26:56,128 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x12489ea50>>
+2025-11-12 23:26:56,128 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:26:56,128 - DEBUG - Endpoint provider result: https://s3.amazonaws.com
+2025-11-12 23:26:56,128 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:26:56,128 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:26:56,129 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_expect_header at 0x123441580>
+2025-11-12 23:26:56,129 - DEBUG - Event before-call.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x12489eba0>>
+2025-11-12 23:26:56,129 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_recursion_detection_header at 0x123440ae0>
+2025-11-12 23:26:56,129 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function inject_api_version_header_if_needed at 0x123442ac0>
+2025-11-12 23:26:56,129 - DEBUG - Making request for OperationModel(name=ListBuckets) with params: {'url_path': '/', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/b,D,Z cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'url': 'https://s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x12489cd70>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': None, 'params': {}}, 'input_params': {}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:26:56,129 - DEBUG - Event request-created.s3.ListBuckets: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x12489cc20>>
+2025-11-12 23:26:56,129 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x1235156a0>>
+2025-11-12 23:26:56,129 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <function set_operation_specific_signer at 0x123440d60>
+2025-11-12 23:26:56,129 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function remove_arn_from_signing_path at 0x123443600>
+2025-11-12 23:26:56,129 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function _set_extra_headers_for_unsigned_request at 0x123443c40>
+2025-11-12 23:26:56,129 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x12489eba0>>
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: env
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:26:56,130 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:26:56,130 - DEBUG - Starting new HTTP connection (3): 169.254.169.254:80
+2025-11-12 23:26:57,134 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x123e5e210>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:26:57,141 - DEBUG - Starting new HTTP connection (4): 169.254.169.254:80
+2025-11-12 23:26:58,144 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x123e5fb10>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:26:58,150 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:26:58,151 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x123440860>
+2025-11-12 23:26:58,153 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x1232c05e0>
+2025-11-12 23:26:58,153 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x123500220>
+2025-11-12 23:26:58,153 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x1232c0360>
+2025-11-12 23:26:58,153 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:26:58,154 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:26:58,154 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:26:58,154 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:26:58,154 - DEBUG - No configured endpoint found.
+2025-11-12 23:26:58,170 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:26:58,172 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:26:58,173 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:26:58,173 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function validate_bucket_name at 0x1234411c0>
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function remove_bucket_from_url_paths_from_model at 0x1234434c0>
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x124900410>>
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x123e5fed0>>
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function generate_idempotent_uuid at 0x123440fe0>
+2025-11-12 23:26:58,174 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function _handle_request_validation_mode_member at 0x123443ba0>
+2025-11-12 23:26:58,174 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x1234436a0>
+2025-11-12 23:26:58,174 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x124900410>>
+2025-11-12 23:26:58,174 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'mlflow-artifacts-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:26:58,175 - DEBUG - Endpoint provider result: https://mlflow-artifacts-bucket.s3.amazonaws.com
+2025-11-12 23:26:58,175 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:26:58,175 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:26:58,175 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_expect_header at 0x123441580>
+2025-11-12 23:26:58,175 - DEBUG - Event before-call.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x124900690>>
+2025-11-12 23:26:58,175 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_recursion_detection_header at 0x123440ae0>
+2025-11-12 23:26:58,175 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function inject_api_version_header_if_needed at 0x123442ac0>
+2025-11-12 23:26:58,175 - DEBUG - Making request for OperationModel(name=HeadBucket) with params: {'url_path': '', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/b,D,Z cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'auth_path': '/mlflow-artifacts-bucket/', 'url': 'https://mlflow-artifacts-bucket.s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x123e5e210>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'mlflow-artifacts-bucket', 'params': {'Bucket': 'mlflow-artifacts-bucket'}}, 'input_params': {'Bucket': 'mlflow-artifacts-bucket'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:26:58,175 - DEBUG - Event request-created.s3.HeadBucket: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x123e5e350>>
+2025-11-12 23:26:58,176 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x123e5fed0>>
+2025-11-12 23:26:58,176 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <function set_operation_specific_signer at 0x123440d60>
+2025-11-12 23:26:58,176 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function remove_arn_from_signing_path at 0x123443600>
+2025-11-12 23:26:58,176 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function _set_extra_headers_for_unsigned_request at 0x123443c40>
+2025-11-12 23:26:58,176 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x124900690>>
+2025-11-12 23:26:58,176 - WARNING - ⚠️  S3 setup failed, falling back to local storage
+2025-11-12 23:26:58,176 - INFO - .2f
+2025-11-12 23:26:58,176 - INFO - 
+🔬 Step 2: Pipeline Execution
+2025-11-12 23:26:58,176 - INFO - 🔬 Running ML Pipeline...
+2025-11-12 23:26:58,176 - INFO - 🚀 Starting End-to-End ML Pipeline
+2025-11-12 23:26:58,176 - INFO - ============================================================
+2025-11-12 23:26:58,176 - INFO - Step 1: Data Ingestion
+2025-11-12 23:26:58,176 - INFO - Using Wine dataset from sklearn
+2025-11-12 23:26:58,185 - INFO - Data loaded successfully. Shape: (178, 14)
+2025-11-12 23:26:58,185 - INFO - Step 2: Data Preprocessing
+2025-11-12 23:26:58,185 - INFO - Starting data preprocessing...
+2025-11-12 23:26:58,196 - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-12 23:26:58,196 - INFO - Step 3: Model Training
+2025-11-12 23:26:58,196 - INFO - Training random_forest model...
+2025-11-12 23:26:58,196 - ERROR - Error training model: RandomForestClassifier.__init__() got an unexpected keyword argument 'params'
+2025-11-12 23:26:58,196 - ERROR - Pipeline execution failed: RandomForestClassifier.__init__() got an unexpected keyword argument 'params'
+2025-11-12 23:26:58,196 - ERROR - ============================================================
+2025-11-12 23:26:58,196 - INFO - .2f
+2025-11-12 23:26:58,196 - ERROR - ❌ Pipeline execution failed: RandomForestClassifier.__init__() got an unexpected keyword argument 'params'
+2025-11-12 23:26:58,196 - ERROR - Workflow execution failed: Pipeline execution failed
+2025-11-12 23:26:58,196 - INFO - 
+============================================================
+2025-11-12 23:26:58,196 - ERROR - ❌ Workflow execution failed!
+2025-11-12 23:26:58,196 - INFO - .2f
+2025-11-12 23:27:22,699 - INFO - Using default configuration
+2025-11-12 23:27:22,699 - INFO - 🎯 Starting Complete ML Workflow
+2025-11-12 23:27:22,699 - INFO - ============================================================
+2025-11-12 23:27:22,699 - INFO - 
+📋 Step 1: Environment Setup
+2025-11-12 23:27:22,699 - INFO - 🔧 Setting up ML environment...
+2025-11-12 23:27:22,699 - INFO - MLflow tracking URI set to: sqlite:///mlruns/mlflow.db
+2025-11-12 23:27:22,699 - INFO - Setting up S3 artifact storage...
+2025-11-12 23:27:22,700 - DEBUG - Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2025-11-12 23:27:22,701 - DEBUG - Changing event name from before-call.apigateway to before-call.api-gateway
+2025-11-12 23:27:22,702 - DEBUG - Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2025-11-12 23:27:22,703 - DEBUG - Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2025-11-12 23:27:22,703 - DEBUG - Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2025-11-12 23:27:22,703 - DEBUG - Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2025-11-12 23:27:22,704 - DEBUG - Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2025-11-12 23:27:22,705 - DEBUG - Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2025-11-12 23:27:22,705 - DEBUG - Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2025-11-12 23:27:22,705 - DEBUG - Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2025-11-12 23:27:22,705 - DEBUG - Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2025-11-12 23:27:22,708 - DEBUG - IMDS ENDPOINT: http://169.254.169.254/
+2025-11-12 23:27:22,711 - DEBUG - Looking for credentials via: env
+2025-11-12 23:27:22,711 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:27:22,711 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:27:22,711 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:27:22,711 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:27:22,712 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:27:22,712 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:27:22,712 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:27:22,713 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:27:22,713 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:27:22,713 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:27:22,714 - DEBUG - Starting new HTTP connection (1): 169.254.169.254:80
+2025-11-12 23:27:23,722 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x118139e80>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:27:23,736 - DEBUG - Starting new HTTP connection (2): 169.254.169.254:80
+2025-11-12 23:27:24,738 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x1180f7250>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:27:24,745 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:27:24,747 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/endpoints.json
+2025-11-12 23:27:24,765 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/sdk-default-configuration.json
+2025-11-12 23:27:24,765 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x118064860>
+2025-11-12 23:27:24,791 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2025-11-12 23:27:24,801 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2025-11-12 23:27:24,817 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2025-11-12 23:27:24,821 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/partitions.json
+2025-11-12 23:27:24,822 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x117f905e0>
+2025-11-12 23:27:24,822 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x118124220>
+2025-11-12 23:27:24,841 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x117f90360>
+2025-11-12 23:27:24,842 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:27:24,842 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:27:24,842 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:27:24,842 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:27:24,842 - DEBUG - No configured endpoint found.
+2025-11-12 23:27:24,844 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:27:24,846 - DEBUG - Loading JSON file: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/data/_retry.json
+2025-11-12 23:27:24,846 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:27:24,846 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:27:24,847 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function validate_bucket_name at 0x1180651c0>
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function remove_bucket_from_url_paths_from_model at 0x1180674c0>
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x118cc2a50>>
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x1181396a0>>
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function generate_idempotent_uuid at 0x118064fe0>
+2025-11-12 23:27:24,847 - DEBUG - Event before-parameter-build.s3.ListBuckets: calling handler <function _handle_request_validation_mode_member at 0x118067ba0>
+2025-11-12 23:27:24,847 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x1180676a0>
+2025-11-12 23:27:24,847 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x118cc2a50>>
+2025-11-12 23:27:24,847 - DEBUG - Calling endpoint provider with parameters: {'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:27:24,848 - DEBUG - Endpoint provider result: https://s3.amazonaws.com
+2025-11-12 23:27:24,848 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:27:24,848 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:27:24,848 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_expect_header at 0x118065580>
+2025-11-12 23:27:24,848 - DEBUG - Event before-call.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x118cc2ba0>>
+2025-11-12 23:27:24,848 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function add_recursion_detection_header at 0x118064ae0>
+2025-11-12 23:27:24,848 - DEBUG - Event before-call.s3.ListBuckets: calling handler <function inject_api_version_header_if_needed at 0x118066ac0>
+2025-11-12 23:27:24,848 - DEBUG - Making request for OperationModel(name=ListBuckets) with params: {'url_path': '/', 'query_string': {}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/D,Z,b cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'url': 'https://s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x118cc0d70>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': None, 'params': {}}, 'input_params': {}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:27:24,849 - DEBUG - Event request-created.s3.ListBuckets: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x118cc0c20>>
+2025-11-12 23:27:24,849 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x1181396a0>>
+2025-11-12 23:27:24,849 - DEBUG - Event choose-signer.s3.ListBuckets: calling handler <function set_operation_specific_signer at 0x118064d60>
+2025-11-12 23:27:24,849 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function remove_arn_from_signing_path at 0x118067600>
+2025-11-12 23:27:24,849 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <function _set_extra_headers_for_unsigned_request at 0x118067c40>
+2025-11-12 23:27:24,849 - DEBUG - Event before-sign.s3.ListBuckets: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x118cc2ba0>>
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: env
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: assume-role
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: assume-role-with-web-identity
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: sso
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: shared-credentials-file
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: custom-process
+2025-11-12 23:27:24,849 - DEBUG - Looking for credentials via: config-file
+2025-11-12 23:27:24,850 - DEBUG - Looking for credentials via: ec2-credentials-file
+2025-11-12 23:27:24,850 - DEBUG - Looking for credentials via: boto-config
+2025-11-12 23:27:24,850 - DEBUG - Looking for credentials via: container-role
+2025-11-12 23:27:24,850 - DEBUG - Looking for credentials via: iam-role
+2025-11-12 23:27:24,850 - DEBUG - Starting new HTTP connection (3): 169.254.169.254:80
+2025-11-12 23:27:25,852 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x118a82210>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/api/token"
+2025-11-12 23:27:25,859 - DEBUG - Starting new HTTP connection (4): 169.254.169.254:80
+2025-11-12 23:27:26,861 - DEBUG - Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 465, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<7 lines>...
+        chunked=self._chunked(request.headers),
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 494, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 325, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/urllib3/connection.py", line 207, in _new_conn
+    raise ConnectTimeoutError(
+    ...<2 lines>...
+    ) from e
+urllib3.exceptions.ConnectTimeoutError: (<botocore.awsrequest.AWSHTTPConnection object at 0x118a83b10>, 'Connection to 169.254.169.254 timed out. (connect timeout=1)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_env/lib/python3.13/site-packages/botocore/httpsession.py", line 500, in send
+    raise ConnectTimeoutError(endpoint_url=request.url, error=e)
+botocore.exceptions.ConnectTimeoutError: Connect timeout on endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2025-11-12 23:27:26,868 - DEBUG - Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2025-11-12 23:27:26,868 - DEBUG - Event choose-service-name: calling handler <function handle_service_name_alias at 0x118064860>
+2025-11-12 23:27:26,869 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x117f905e0>
+2025-11-12 23:27:26,870 - DEBUG - Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x118124220>
+2025-11-12 23:27:26,870 - DEBUG - Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x117f90360>
+2025-11-12 23:27:26,870 - DEBUG - Looking for endpoint for s3 via: environment_service
+2025-11-12 23:27:26,870 - DEBUG - Looking for endpoint for s3 via: environment_global
+2025-11-12 23:27:26,870 - DEBUG - Looking for endpoint for s3 via: config_service
+2025-11-12 23:27:26,870 - DEBUG - Looking for endpoint for s3 via: config_global
+2025-11-12 23:27:26,870 - DEBUG - No configured endpoint found.
+2025-11-12 23:27:26,892 - DEBUG - Setting s3 timeout as (60, 60)
+2025-11-12 23:27:26,894 - DEBUG - Registering retry handlers for service: s3
+2025-11-12 23:27:26,895 - DEBUG - Registering S3 region redirector handler
+2025-11-12 23:27:26,895 - DEBUG - Registering S3Express Identity Resolver
+2025-11-12 23:27:26,895 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function validate_bucket_name at 0x1180651c0>
+2025-11-12 23:27:26,895 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function remove_bucket_from_url_paths_from_model at 0x1180674c0>
+2025-11-12 23:27:26,895 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x118d24410>>
+2025-11-12 23:27:26,896 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x118a83ed0>>
+2025-11-12 23:27:26,896 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function generate_idempotent_uuid at 0x118064fe0>
+2025-11-12 23:27:26,896 - DEBUG - Event before-parameter-build.s3.HeadBucket: calling handler <function _handle_request_validation_mode_member at 0x118067ba0>
+2025-11-12 23:27:26,896 - DEBUG - Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x1180676a0>
+2025-11-12 23:27:26,896 - DEBUG - Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x118d24410>>
+2025-11-12 23:27:26,896 - DEBUG - Calling endpoint provider with parameters: {'Bucket': 'mlflow-artifacts-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'ForcePathStyle': False, 'Accelerate': False, 'UseGlobalEndpoint': True, 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2025-11-12 23:27:26,896 - DEBUG - Endpoint provider result: https://mlflow-artifacts-bucket.s3.amazonaws.com
+2025-11-12 23:27:26,896 - DEBUG - Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2025-11-12 23:27:26,896 - DEBUG - Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2025-11-12 23:27:26,897 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_expect_header at 0x118065580>
+2025-11-12 23:27:26,897 - DEBUG - Event before-call.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x118d24690>>
+2025-11-12 23:27:26,897 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function add_recursion_detection_header at 0x118064ae0>
+2025-11-12 23:27:26,897 - DEBUG - Event before-call.s3.HeadBucket: calling handler <function inject_api_version_header_if_needed at 0x118066ac0>
+2025-11-12 23:27:26,897 - DEBUG - Making request for OperationModel(name=HeadBucket) with params: {'url_path': '', 'query_string': {}, 'method': 'HEAD', 'headers': {'User-Agent': 'Boto3/1.40.71 md/Botocore#1.40.71 ua/2.1 os/macos#24.6.0 md/arch#arm64 lang/python#3.13.3 md/pyimpl#CPython m/D,Z,b cfg/retry-mode#legacy Botocore/1.40.71'}, 'body': b'', 'auth_path': '/mlflow-artifacts-bucket/', 'url': 'https://mlflow-artifacts-bucket.s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x118a82210>, 'has_streaming_input': False, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'mlflow-artifacts-bucket', 'params': {'Bucket': 'mlflow-artifacts-bucket'}}, 'input_params': {'Bucket': 'mlflow-artifacts-bucket'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}}}
+2025-11-12 23:27:26,897 - DEBUG - Event request-created.s3.HeadBucket: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x118a82350>>
+2025-11-12 23:27:26,897 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x118a83ed0>>
+2025-11-12 23:27:26,897 - DEBUG - Event choose-signer.s3.HeadBucket: calling handler <function set_operation_specific_signer at 0x118064d60>
+2025-11-12 23:27:26,897 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function remove_arn_from_signing_path at 0x118067600>
+2025-11-12 23:27:26,897 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <function _set_extra_headers_for_unsigned_request at 0x118067c40>
+2025-11-12 23:27:26,898 - DEBUG - Event before-sign.s3.HeadBucket: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x118d24690>>
+2025-11-12 23:27:26,898 - WARNING - ⚠️  S3 setup failed, falling back to local storage
+2025-11-12 23:27:26,898 - INFO - .2f
+2025-11-12 23:27:26,898 - INFO - 
+🔬 Step 2: Pipeline Execution
+2025-11-12 23:27:26,898 - INFO - 🔬 Running ML Pipeline...
+2025-11-12 23:27:26,898 - INFO - 🚀 Starting End-to-End ML Pipeline
+2025-11-12 23:27:26,898 - INFO - ============================================================
+2025-11-12 23:27:26,898 - INFO - Step 1: Data Ingestion
+2025-11-12 23:27:26,898 - INFO - Using Wine dataset from sklearn
+2025-11-12 23:27:26,908 - INFO - Data loaded successfully. Shape: (178, 14)
+2025-11-12 23:27:26,909 - INFO - Step 2: Data Preprocessing
+2025-11-12 23:27:26,909 - INFO - Starting data preprocessing...
+2025-11-12 23:27:26,918 - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-12 23:27:26,918 - INFO - Step 3: Model Training
+2025-11-12 23:27:26,918 - INFO - Training random_forest model...
+2025-11-12 23:27:27,035 - INFO - Model training completed
+2025-11-12 23:27:27,035 - INFO - Evaluating model...
+2025-11-12 23:27:27,046 - INFO - Model evaluation completed. Accuracy: 1.0000
+2025-11-12 23:27:27,046 - INFO - Step 4: MLflow Logging

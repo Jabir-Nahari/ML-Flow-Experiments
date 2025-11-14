@@ -1,0 +1,15 @@
+creation_timestamp: 1762951648056
+current_stage: None
+deployment_job_state: null
+description: ''
+last_updated_timestamp: 1762951648056
+model_id: m-d60c8e65c7344105a37fe5a063dd5616
+name: IrisClassifier
+run_id: ae9e7dde11b44190a99c634c9c60cc99
+run_link: ''
+source: models:/m-d60c8e65c7344105a37fe5a063dd5616
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/244918341474380135/models/m-d60c8e65c7344105a37fe5a063dd5616/artifacts
+user_id: null
+version: 5

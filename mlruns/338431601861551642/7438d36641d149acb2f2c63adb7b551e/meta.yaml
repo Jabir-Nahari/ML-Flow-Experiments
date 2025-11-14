@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/nawaf/Desktop/ICS%20474/ML-Flow-Experiments-hassan/mlruns/338431601861551642/7438d36641d149acb2f2c63adb7b551e/artifacts
+end_time: 1763113024458
+entry_point_name: ''
+experiment_id: '338431601861551642'
+lifecycle_stage: active
+run_id: 7438d36641d149acb2f2c63adb7b551e
+run_name: qa_suite_20251114_123704
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763113024264
+status: 3
+tags: []
+user_id: nawaf

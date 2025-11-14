@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/d0754479222040c188f52987df7aed57/artifacts
+end_time: 1762869324042
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: d0754479222040c188f52987df7aed57
+run_name: persistent-goose-186
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869323767
+status: 3
+tags: []
+user_id: 7assa

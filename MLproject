@@ -1,0 +1,17 @@
+name: mlflow-evaluation-project
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      dataset: {type: string, default: "iris"}
+      model: {type: string, default: "random_forest"}
+      seed: {type: int, default: 42}
+    command: "python train.py --dataset {dataset} --model {model} --seed {seed}"
+
+  serve:
+    parameters:
+      model_name: {type: string}
+      port: {type: int, default: 5001}
+    command: "mlflow models serve -m models:/{model_name}/Production -p {port}"

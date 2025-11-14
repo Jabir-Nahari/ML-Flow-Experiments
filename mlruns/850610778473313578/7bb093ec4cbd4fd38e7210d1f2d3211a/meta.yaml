@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/7bb093ec4cbd4fd38e7210d1f2d3211a/artifacts
+end_time: 1762869186752
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: 7bb093ec4cbd4fd38e7210d1f2d3211a
+run_name: orderly-mole-818
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869186435
+status: 3
+tags: []
+user_id: 7assa

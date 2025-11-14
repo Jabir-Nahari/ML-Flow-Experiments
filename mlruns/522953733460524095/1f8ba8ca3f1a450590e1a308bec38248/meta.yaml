@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/522953733460524095/1f8ba8ca3f1a450590e1a308bec38248/artifacts
+end_time: 1762869187275
+entry_point_name: ''
+experiment_id: '522953733460524095'
+lifecycle_stage: active
+run_id: 1f8ba8ca3f1a450590e1a308bec38248
+run_name: dashing-rat-866
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869186872
+status: 3
+tags: []
+user_id: 7assa

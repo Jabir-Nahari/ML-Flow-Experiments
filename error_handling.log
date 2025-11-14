@@ -1,0 +1,273 @@
+2025-11-14 12:34:40,576 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:34:40,577 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:34:40,593 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (120, 4), Test shape: (30, 4)
+2025-11-14 12:34:40,593 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.02s
+2025-11-14 12:34:40,597 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:34:40,597 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:34:40,719 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-14 12:34:40,719 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.12s
+2025-11-14 12:34:40,752 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:34:40,752 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:34:40,756 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (571, 5), Test shape: (143, 5)
+2025-11-14 12:34:40,756 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.00s
+2025-11-14 12:34:51,946 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:34:51,946 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:34:51,959 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-14 12:34:51,959 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.01s
+2025-11-14 12:34:51,960 - error_handling - INFO - Starting operation: model_training
+2025-11-14 12:34:51,960 - end_to_end_pipeline - INFO - Training random_forest model...
+2025-11-14 12:34:51,990 - end_to_end_pipeline - INFO - Model training completed
+2025-11-14 12:34:51,990 - error_handling - INFO - Operation 'model_training' completed successfully in 0.03s
+2025-11-14 12:34:51,990 - error_handling - INFO - Starting operation: model_evaluation
+2025-11-14 12:34:51,990 - end_to_end_pipeline - INFO - Evaluating model...
+2025-11-14 12:34:52,000 - end_to_end_pipeline - INFO - Model evaluation and validation completed. Accuracy: 1.0000
+2025-11-14 12:34:52,000 - error_handling - INFO - Operation 'model_evaluation' completed successfully in 0.01s
+2025-11-14 12:34:52,006 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:34:52,013 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:34:52,017 - end_to_end_pipeline - INFO - MLflow experiment set to: test_model_training
+2025-11-14 12:34:52,073 - end_to_end_pipeline - INFO - Started MLflow run: test_run (ID: ec02fe6c2cc54fa6877d2567cec335a9)
+2025-11-14 12:34:52,075 - end_to_end_pipeline - INFO - Logged 2 parameters to MLflow
+2025-11-14 12:34:52,101 - end_to_end_pipeline - INFO - Logged metrics to MLflow
+2025-11-14 12:34:54,195 - end_to_end_pipeline - INFO - Model logged to MLflow as: model
+2025-11-14 12:34:54,197 - end_to_end_pipeline - INFO - MLflow run ended
+2025-11-14 12:35:34,923 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:35:34,923 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:35:34,936 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-14 12:35:34,936 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.01s
+2025-11-14 12:35:34,936 - error_handling - INFO - Starting operation: model_training
+2025-11-14 12:35:34,936 - end_to_end_pipeline - INFO - Training random_forest model...
+2025-11-14 12:35:34,969 - end_to_end_pipeline - INFO - Model training completed
+2025-11-14 12:35:34,969 - error_handling - INFO - Operation 'model_training' completed successfully in 0.03s
+2025-11-14 12:35:35,018 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:35:35,055 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:35:35,065 - end_to_end_pipeline - INFO - MLflow experiment set to: test_model_registry
+2025-11-14 12:35:35,131 - end_to_end_pipeline - INFO - Started MLflow run: registry_test (ID: 07c24fd5b604440da5d8951a3e6a78d8)
+2025-11-14 12:35:37,082 - end_to_end_pipeline - INFO - Model logged to MLflow as: model
+2025-11-14 12:35:37,083 - end_to_end_pipeline - INFO - MLflow run ended
+2025-11-14 12:35:37,105 - end_to_end_pipeline - INFO - Model registered as: TestWineClassifier version 1
+2025-11-14 12:35:37,110 - end_to_end_pipeline - INFO - Model TestWineClassifier v1 transitioned to Production
+2025-11-14 12:37:01,868 - __main__ - INFO - 🚀 Starting End-to-End ML Pipeline with QA & Error Handling
+2025-11-14 12:37:01,869 - __main__ - INFO - ============================================================
+2025-11-14 12:37:01,869 - error_handling - INFO - .2f
+2025-11-14 12:37:01,869 - __main__ - INFO - Step 1: Data Ingestion
+2025-11-14 12:37:01,869 - error_handling - INFO - Starting operation: pipeline_data_ingestion
+2025-11-14 12:37:01,869 - error_handling - INFO - .2f
+2025-11-14 12:37:01,869 - error_handling - INFO - Starting operation: data_ingestion
+2025-11-14 12:37:01,869 - __main__ - INFO - Using Wine dataset from sklearn
+2025-11-14 12:37:01,896 - __main__ - INFO - Data loaded and validated successfully. Shape: (178, 14)
+2025-11-14 12:37:01,897 - error_handling - INFO - Operation 'data_ingestion' completed successfully in 0.03s
+2025-11-14 12:37:01,924 - error_handling - INFO - Operation 'pipeline_data_ingestion' completed successfully in 0.06s
+2025-11-14 12:37:01,925 - __main__ - INFO - Step 2: Data Preprocessing
+2025-11-14 12:37:01,925 - error_handling - INFO - Starting operation: pipeline_data_preprocessing
+2025-11-14 12:37:01,925 - error_handling - INFO - .2f
+2025-11-14 12:37:01,925 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:37:01,925 - __main__ - INFO - Starting data preprocessing...
+2025-11-14 12:37:01,931 - __main__ - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-14 12:37:01,935 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.01s
+2025-11-14 12:37:01,936 - error_handling - INFO - Operation 'pipeline_data_preprocessing' completed successfully in 0.01s
+2025-11-14 12:37:01,936 - __main__ - INFO - Step 3: Model Training
+2025-11-14 12:37:01,936 - error_handling - INFO - Starting operation: pipeline_model_training
+2025-11-14 12:37:01,936 - error_handling - INFO - .2f
+2025-11-14 12:37:01,936 - error_handling - INFO - Starting operation: model_training
+2025-11-14 12:37:01,936 - __main__ - INFO - Training random_forest model...
+2025-11-14 12:37:01,986 - __main__ - INFO - Model training completed
+2025-11-14 12:37:01,986 - error_handling - INFO - Operation 'model_training' completed successfully in 0.05s
+2025-11-14 12:37:01,986 - error_handling - INFO - Starting operation: model_evaluation
+2025-11-14 12:37:01,986 - __main__ - INFO - Evaluating model...
+2025-11-14 12:37:01,999 - __main__ - INFO - Model evaluation and validation completed. Accuracy: 1.0000
+2025-11-14 12:37:01,999 - error_handling - INFO - Operation 'model_evaluation' completed successfully in 0.01s
+2025-11-14 12:37:02,004 - error_handling - INFO - Operation 'pipeline_model_training' completed successfully in 0.07s
+2025-11-14 12:37:02,005 - __main__ - INFO - Step 4: MLflow Logging with QA
+2025-11-14 12:37:02,005 - error_handling - INFO - Starting operation: pipeline_mlflow_logging
+2025-11-14 12:37:02,005 - error_handling - INFO - .2f
+2025-11-14 12:37:02,011 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:37:02,021 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:37:02,024 - __main__ - INFO - MLflow experiment set to: Wine_Classification_Pipeline_QA
+2025-11-14 12:37:02,082 - __main__ - INFO - Started MLflow run: pipeline_run_20251114_123702 (ID: 83a76f8c531d460f8e5183bb6247504d)
+2025-11-14 12:37:02,082 - qa_validation - ERROR - Failed to log health to MLflow: Run with UUID 83a76f8c531d460f8e5183bb6247504d is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:02,089 - __main__ - INFO - Logged 7 parameters to MLflow
+2025-11-14 12:37:02,113 - __main__ - INFO - Logged metrics to MLflow
+2025-11-14 12:37:04,203 - __main__ - INFO - Model logged to MLflow as: model
+2025-11-14 12:37:04,203 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 83a76f8c531d460f8e5183bb6247504d is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,209 - __main__ - INFO - MLflow run ended
+2025-11-14 12:37:04,210 - error_handling - INFO - Operation 'pipeline_mlflow_logging' completed successfully in 2.21s
+2025-11-14 12:37:04,214 - __main__ - INFO - Step 5: Model Deployment
+2025-11-14 12:37:04,214 - error_handling - INFO - Starting operation: pipeline_deployment
+2025-11-14 12:37:04,214 - error_handling - INFO - .2f
+2025-11-14 12:37:04,242 - __main__ - INFO - Model registered as: WineClassifier version 1
+2025-11-14 12:37:04,248 - __main__ - INFO - Model WineClassifier v1 transitioned to Production
+2025-11-14 12:37:04,248 - __main__ - INFO - Model deployed with URI: models:/WineClassifier/Production
+2025-11-14 12:37:04,248 - error_handling - INFO - Operation 'pipeline_deployment' completed successfully in 0.03s
+2025-11-14 12:37:04,259 - error_handling - INFO - Resource usage logged to MLflow
+2025-11-14 12:37:04,260 - __main__ - INFO - Step 6: Final QA Validation
+2025-11-14 12:37:04,260 - qa_validation - INFO - 🚀 Starting Comprehensive QA Test Suite
+2025-11-14 12:37:04,260 - qa_validation - INFO - ============================================================
+2025-11-14 12:37:04,261 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:37:04,269 - qa_validation - INFO - Running data_validation tests...
+2025-11-14 12:37:04,269 - error_handling - INFO - Starting operation: qa_data_validation
+2025-11-14 12:37:04,269 - error_handling - INFO - .2f
+2025-11-14 12:37:04,278 - error_handling - INFO - Operation 'qa_data_validation' completed successfully in 0.01s
+2025-11-14 12:37:04,278 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,278 - qa_validation - INFO - Running model_validation tests...
+2025-11-14 12:37:04,278 - error_handling - INFO - Starting operation: qa_model_validation
+2025-11-14 12:37:04,278 - error_handling - INFO - .2f
+2025-11-14 12:37:04,279 - error_handling - INFO - Operation 'qa_model_validation' completed successfully in 0.00s
+2025-11-14 12:37:04,279 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,279 - qa_validation - INFO - Running edge_cases tests...
+2025-11-14 12:37:04,279 - error_handling - INFO - Starting operation: qa_edge_cases
+2025-11-14 12:37:04,279 - error_handling - INFO - .2f
+2025-11-14 12:37:04,312 - error_handling - INFO - Operation 'qa_edge_cases' completed successfully in 0.03s
+2025-11-14 12:37:04,312 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,312 - qa_validation - INFO - Running resource_limits tests...
+2025-11-14 12:37:04,312 - error_handling - INFO - Starting operation: qa_resource_limits
+2025-11-14 12:37:04,312 - error_handling - INFO - .2f
+2025-11-14 12:37:04,312 - error_handling - INFO - .2f
+2025-11-14 12:37:04,361 - error_handling - INFO - .2f
+2025-11-14 12:37:04,364 - error_handling - INFO - Operation 'qa_resource_limits' completed successfully in 0.05s
+2025-11-14 12:37:04,364 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,364 - qa_validation - INFO - Running integration tests...
+2025-11-14 12:37:04,364 - error_handling - INFO - Starting operation: qa_integration
+2025-11-14 12:37:04,364 - error_handling - INFO - .2f
+2025-11-14 12:37:04,366 - end_to_end_pipeline - INFO - 🚀 Starting End-to-End ML Pipeline with QA & Error Handling
+2025-11-14 12:37:04,366 - end_to_end_pipeline - INFO - ============================================================
+2025-11-14 12:37:04,366 - error_handling - INFO - .2f
+2025-11-14 12:37:04,366 - end_to_end_pipeline - INFO - Step 1: Data Ingestion
+2025-11-14 12:37:04,366 - error_handling - INFO - Starting operation: pipeline_data_ingestion
+2025-11-14 12:37:04,366 - error_handling - INFO - .2f
+2025-11-14 12:37:04,366 - error_handling - INFO - Starting operation: data_ingestion
+2025-11-14 12:37:04,366 - end_to_end_pipeline - INFO - Using Wine dataset from sklearn
+2025-11-14 12:37:04,374 - end_to_end_pipeline - INFO - Data loaded and validated successfully. Shape: (178, 14)
+2025-11-14 12:37:04,374 - error_handling - INFO - Operation 'data_ingestion' completed successfully in 0.01s
+2025-11-14 12:37:04,379 - error_handling - INFO - Operation 'pipeline_data_ingestion' completed successfully in 0.01s
+2025-11-14 12:37:04,379 - end_to_end_pipeline - INFO - Step 2: Data Preprocessing
+2025-11-14 12:37:04,379 - error_handling - INFO - Starting operation: pipeline_data_preprocessing
+2025-11-14 12:37:04,379 - error_handling - INFO - .2f
+2025-11-14 12:37:04,379 - error_handling - INFO - Starting operation: data_preprocessing
+2025-11-14 12:37:04,379 - end_to_end_pipeline - INFO - Starting data preprocessing...
+2025-11-14 12:37:04,383 - end_to_end_pipeline - INFO - Preprocessing completed. Train shape: (142, 13), Test shape: (36, 13)
+2025-11-14 12:37:04,383 - error_handling - INFO - Operation 'data_preprocessing' completed successfully in 0.00s
+2025-11-14 12:37:04,385 - error_handling - INFO - Operation 'pipeline_data_preprocessing' completed successfully in 0.01s
+2025-11-14 12:37:04,385 - end_to_end_pipeline - INFO - Step 3: Model Training
+2025-11-14 12:37:04,385 - error_handling - INFO - Starting operation: pipeline_model_training
+2025-11-14 12:37:04,385 - error_handling - INFO - .2f
+2025-11-14 12:37:04,385 - error_handling - INFO - Starting operation: model_training
+2025-11-14 12:37:04,385 - end_to_end_pipeline - INFO - Training random_forest model...
+2025-11-14 12:37:04,434 - end_to_end_pipeline - INFO - Model training completed
+2025-11-14 12:37:04,434 - error_handling - INFO - Operation 'model_training' completed successfully in 0.05s
+2025-11-14 12:37:04,434 - error_handling - INFO - Starting operation: model_evaluation
+2025-11-14 12:37:04,434 - end_to_end_pipeline - INFO - Evaluating model...
+2025-11-14 12:37:04,445 - end_to_end_pipeline - INFO - Model evaluation and validation completed. Accuracy: 1.0000
+2025-11-14 12:37:04,445 - error_handling - INFO - Operation 'model_evaluation' completed successfully in 0.01s
+2025-11-14 12:37:04,450 - error_handling - INFO - Operation 'pipeline_model_training' completed successfully in 0.07s
+2025-11-14 12:37:04,450 - end_to_end_pipeline - INFO - Step 4: MLflow Logging with QA
+2025-11-14 12:37:04,450 - error_handling - INFO - Starting operation: pipeline_mlflow_logging
+2025-11-14 12:37:04,450 - error_handling - INFO - .2f
+2025-11-14 12:37:04,451 - root - WARNING - Malformed experiment '1'. Detailed error Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 376, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 474, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1644, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/store/tracking/file_store.py", line 1637, in _read_helper
+    result = read_yaml(root, file_name)
+  File "/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlflow_venv/lib/python3.13/site-packages/mlflow/utils/yaml_utils.py", line 104, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file '/Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments-hassan/mlruns/1/meta.yaml' does not exist.
+2025-11-14 12:37:04,454 - end_to_end_pipeline - INFO - MLflow experiment set to: qa_integration_test
+2025-11-14 12:37:04,454 - end_to_end_pipeline - ERROR - Error starting MLflow run: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,454 - error_handling - ERROR - Operation 'pipeline_mlflow_logging' failed after 0.00s: Exception: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,454 - end_to_end_pipeline - ERROR - Pipeline execution failed with unexpected error: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,454 - error_handling - INFO - Operation 'qa_integration' completed successfully in 0.09s
+2025-11-14 12:37:04,454 - error_handling - ERROR - Failed to log resource usage to MLflow: Run with UUID 7438d36641d149acb2f2c63adb7b551e is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2025-11-14 12:37:04,458 - qa_validation - INFO - QA Suite completed: WARNING
+2025-11-14 12:37:04,458 - qa_validation - INFO - Passed: 11, Failed: 4, Total: 15
+2025-11-14 12:37:04,461 - error_handling - ERROR - Failed to log validation results to MLflow: Cannot start run with ID 83a76f8c531d460f8e5183bb6247504d because active run ID does not match environment run ID. Make sure --experiment-name or --experiment-id matches experiment set with set_experiment(), or just use command-line arguments
+2025-11-14 12:37:04,461 - __main__ - INFO - QA Validation: WARNING
+2025-11-14 12:37:04,461 - __main__ - INFO - 🎉 Pipeline execution completed successfully!
+2025-11-14 12:37:04,461 - __main__ - INFO - ============================================================

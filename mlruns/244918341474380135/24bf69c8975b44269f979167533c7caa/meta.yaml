@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/244918341474380135/24bf69c8975b44269f979167533c7caa/artifacts
+end_time: 1762951677714
+entry_point_name: ''
+experiment_id: '244918341474380135'
+lifecycle_stage: active
+run_id: 24bf69c8975b44269f979167533c7caa
+run_name: version_2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762951673038
+status: 3
+tags: []
+user_id: 7assa

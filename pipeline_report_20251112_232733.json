@@ -1,0 +1,78 @@
+{
+  "execution_timestamp": "2025-11-12T23:27:33.719688",
+  "configuration": {
+    "environment": {
+      "setup_s3": true,
+      "s3_bucket": "mlflow-artifacts-bucket",
+      "s3_region": "us-east-1",
+      "mlflow_tracking_uri": "sqlite:///mlruns/mlflow.db"
+    },
+    "pipeline": {
+      "data_source": "sklearn",
+      "s3_bucket": null,
+      "s3_key": null,
+      "local_path": null,
+      "experiment_name": "Wine_Classification_Master_Pipeline",
+      "model_name": "WineClassifier",
+      "register_model": true
+    },
+    "testing": {
+      "run_unit_tests": false,
+      "run_integration_tests": false,
+      "run_serving_tests": false,
+      "run_ab_tests": false,
+      "performance_test": false
+    },
+    "deployment": {
+      "start_serving": false,
+      "serving_port": 5001,
+      "test_duration_minutes": 1
+    }
+  },
+  "pipeline_results": {
+    "status": "success",
+    "run_id": "697dac3c2bca4d53b8052c3d24bb5c00",
+    "metrics": {
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "classification_report": {
+        "0": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 12.0
+        },
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 14.0
+        },
+        "2": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 10.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 36.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 36.0
+        }
+      }
+    },
+    "model_uri": "models:/WineClassifier/Production"
+  },
+  "environment_setup": true,
+  "status": "completed"
+}

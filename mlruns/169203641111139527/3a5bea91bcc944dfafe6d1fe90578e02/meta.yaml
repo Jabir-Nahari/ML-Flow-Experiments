@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/169203641111139527/3a5bea91bcc944dfafe6d1fe90578e02/artifacts
+end_time: 1762869215490
+entry_point_name: ''
+experiment_id: '169203641111139527'
+lifecycle_stage: active
+run_id: 3a5bea91bcc944dfafe6d1fe90578e02
+run_name: bold-croc-732
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869215342
+status: 3
+tags: []
+user_id: 7assa

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/376c95295b2342b783491c410824e5ac/artifacts
+end_time: 1762869193530
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: 376c95295b2342b783491c410824e5ac
+run_name: merciful-bird-447
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869193204
+status: 3
+tags: []
+user_id: 7assa

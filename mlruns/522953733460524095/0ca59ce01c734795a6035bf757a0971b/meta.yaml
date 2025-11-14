@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/522953733460524095/0ca59ce01c734795a6035bf757a0971b/artifacts
+end_time: 1762869190845
+entry_point_name: ''
+experiment_id: '522953733460524095'
+lifecycle_stage: active
+run_id: 0ca59ce01c734795a6035bf757a0971b
+run_name: industrious-gull-648
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869190456
+status: 3
+tags: []
+user_id: 7assa

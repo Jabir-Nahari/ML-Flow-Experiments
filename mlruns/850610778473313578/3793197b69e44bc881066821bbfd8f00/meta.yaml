@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/850610778473313578/3793197b69e44bc881066821bbfd8f00/artifacts
+end_time: 1762869328085
+entry_point_name: ''
+experiment_id: '850610778473313578'
+lifecycle_stage: active
+run_id: 3793197b69e44bc881066821bbfd8f00
+run_name: kindly-crab-127
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1762869327735
+status: 3
+tags: []
+user_id: 7assa

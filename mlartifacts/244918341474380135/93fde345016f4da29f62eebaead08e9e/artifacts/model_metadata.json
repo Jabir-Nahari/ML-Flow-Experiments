@@ -1,0 +1,26 @@
+{
+  "model_name": "IrisClassifier",
+  "version": "3 (Production)",
+  "training_date": "2025-11-12T10:33:46.461359",
+  "framework": "scikit-learn",
+  "algorithm": "RandomForestClassifier",
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0
+  },
+  "feature_names": [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)"
+  ],
+  "target_names": [
+    "setosa",
+    "versicolor",
+    "virginica"
+  ],
+  "n_samples_train": 120,
+  "n_samples_test": 30
+}
