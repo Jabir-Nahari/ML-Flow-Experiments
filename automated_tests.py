@@ -1,8 +1,3 @@
-"""
-Automated Testing Suite for Student C
-Comprehensive testing including unit tests, integration tests, and performance tests
-for the end-to-end ML pipeline and serving components.
-"""
 
 import unittest
 import sys

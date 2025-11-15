@@ -1,8 +1,4 @@
-"""
-Student C - Live Demo Script
-Comprehensive step-by-step presentation script for MLflow demonstration
-covering setup, competitive analysis, pipeline execution, and error simulation.
-"""
+
 
 import os
 import sys

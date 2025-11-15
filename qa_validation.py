@@ -1,5 +1,5 @@
 """
-Quality Assurance and Validation Scripts for Student C Pipeline
+Quality Assurance and Validation Scripts for the Pipeline
 Automated QA testing, edge case validation, and comprehensive monitoring.
 """
 

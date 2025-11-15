@@ -1,8 +1,4 @@
-"""
-Master Pipeline Orchestrator for Student C
-Complete workflow integration from data ingestion to deployment with
-comprehensive error handling, logging, and testing.
-"""
+
 
 import os
 import sys

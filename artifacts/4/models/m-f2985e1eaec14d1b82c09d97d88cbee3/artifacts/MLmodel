@@ -1,0 +1,22 @@
+artifact_path: /Users/jabirnahari/Desktop/Programming_Projects/KFUPM General/Big Data/ML-Flow-Experiments/artifacts/4/models/m-f2985e1eaec14d1b82c09d97d88cbee3/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.16
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.6.0
+model_id: m-f2985e1eaec14d1b82c09d97d88cbee3
+model_size_bytes: 12897
+model_uuid: m-f2985e1eaec14d1b82c09d97d88cbee3
+prompts: null
+run_id: 798237ddc61b4a2a9a7decf45d986036
+utc_time_created: '2025-11-15 09:53:15.040798'
