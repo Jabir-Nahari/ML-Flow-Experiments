@@ -1,0 +1,22 @@
+artifact_path: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments Jabir/artifacts/4/models/m-dbbc779139794d4eb75a0467cd161e60/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.6.0
+model_id: m-dbbc779139794d4eb75a0467cd161e60
+model_size_bytes: 177494
+model_uuid: m-dbbc779139794d4eb75a0467cd161e60
+prompts: null
+run_id: c4dca56b35e940c2aa8e9cd4fc560660
+utc_time_created: '2025-11-15 10:29:39.210063'

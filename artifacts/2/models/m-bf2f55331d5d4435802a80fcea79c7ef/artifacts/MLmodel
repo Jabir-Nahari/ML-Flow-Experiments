@@ -1,0 +1,36 @@
+artifact_path: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments Jabir/artifacts/2/models/m-bf2f55331d5d4435802a80fcea79c7ef/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+is_signature_from_type_hint: false
+mlflow_version: 3.6.0
+model_id: m-bf2f55331d5d4435802a80fcea79c7ef
+model_size_bytes: 1604
+model_uuid: m-bf2f55331d5d4435802a80fcea79c7ef
+prompts: null
+run_id: 8e49c8342d9b4f7ca81412d831c9c951
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "pclass", "required": true}, {"type": "double",
+    "name": "age", "required": true}, {"type": "long", "name": "sibsp", "required":
+    true}, {"type": "long", "name": "parch", "required": true}, {"type": "double",
+    "name": "fare", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-11-15 10:30:39.204991'

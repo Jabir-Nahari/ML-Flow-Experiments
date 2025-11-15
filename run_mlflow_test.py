@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-MLflow Test Script - Runs key components from MLflow_main.ipynb
-"""
-
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -13,7 +8,7 @@ import numpy as np
 from sklearn.datasets import load_iris, load_wine
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
 import mlflow
 from mlflow.tracking import MlflowClient
@@ -30,7 +25,7 @@ client = MlflowClient()
 
 print("MLflow tracking URI:", mlflow.get_tracking_uri())
 
-# Load data
+# Load Data
 iris = load_iris(as_frame=True)
 X_iris = iris.data
 y_iris = iris.target
@@ -41,18 +36,20 @@ y_wine = wine.target
 
 # Titanic data
 try:
-    import seaborn as sns
     titanic = sns.load_dataset('titanic')
     titanic = titanic.dropna(subset=['survived'])
     titanic = titanic.select_dtypes(include=['number']).fillna(0)
     X_titanic = titanic.drop(columns=['survived'])
     y_titanic = titanic['survived']
-except:
-    print("Titanic dataset not available, skipping")
+    print("Titanic dataset loaded successfully")
+except Exception as e:
+    print(f"Titanic dataset not available: {e}")
     X_titanic = None
     y_titanic = None
 
-# Training function
+print("Data loading completed")
+
+# Define Training Function
 def train_and_log_baselines(X, y, dataset_name='dataset', seed=42):
     experiment_name = f"{dataset_name} experiment"
     try:
@@ -84,14 +81,17 @@ def train_and_log_baselines(X, y, dataset_name='dataset', seed=42):
                 input_example = X_train.head(5)
                 sample_preds = model.predict(input_example)
                 signature = infer_signature(input_example, sample_preds)
-                mlflow.sklearn.log_model(model, artifact_path='./artifacts/', signature=signature, input_example=input_example)
+                mlflow.sklearn.log_model(model, artifact_path='artifacts', signature=signature, input_example=input_example)
             except Exception as e:
                 print(f"Model logging failed: {e}")
                 try:
-                    mlflow.sklearn.log_model(model, artifact_path='./artifacts/')
+                    mlflow.sklearn.log_model(model, artifact_path='artifacts')
                 except Exception:
                     pass
 
+print("Training function defined")
+
+# Train Baseline Models
 # Generate seeds
 seeds = [random.randint(0, 10000) for _ in range(3)]
 print(f'Using seeds for testing: {seeds}')
@@ -105,7 +105,7 @@ for seed in seeds:
 
 print("Baseline training completed")
 
-# Model Registry Demo
+# Model Registry - Train and Register Versions
 mlflow.set_experiment("Model Registry Demo")
 model_name = "IrisClassifier"
 
@@ -122,32 +122,46 @@ for i, config in enumerate(model_configs, 1):
         model = RandomForestClassifier(n_estimators=config['n_estimators'], max_depth=config['max_depth'], random_state=42)
         model.fit(X_train, y_train)
         mlflow.log_params(config)
-
+        
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         mlflow.log_metric("accuracy", accuracy)
-
-        model_info = mlflow.sklearn.log_model(model, artifact_path="model", registered_model_name=model_name)
+        
+        model_info = mlflow.sklearn.log_model(model, registered_model_name=model_name)
         print(f"Registered {model_name} version {i} - Accuracy: {accuracy:.4f}")
 
-# Stage transitions
+print("Model versions registered")
+
+# Stage Transitions
+# Transition version 1 to Staging
 client.transition_model_version_stage(name=model_name, version=1, stage="Staging")
+print("Version 1 moved to Staging")
+
+# Transition version 2 to Staging (archive v1)
 client.transition_model_version_stage(name=model_name, version=2, stage="Staging", archive_existing_versions=True)
+print("Version 2 moved to Staging (Version 1 archived)")
+
+# Promote version 3 to Production
 client.transition_model_version_stage(name=model_name, version=3, stage="Production")
+print("Version 3 moved to Production")
 
-print("Model registry and stage transitions completed")
+print("Stage transitions completed")
 
+# Create Directories and Load Production Model
 # Create directories
-os.makedirs('model_artifacts', exist_ok=True)
-os.makedirs('deployment', exist_ok=True)
+os.makedirs('./artifacts', exist_ok=True)
+os.makedirs('./deployment', exist_ok=True)
 
-# Load production model and log artifacts
+# Load production model
 model_uri = f"models:/{model_name}/Production"
 prod_model = mlflow.sklearn.load_model(model_uri)
 
 y_pred = prod_model.predict(X_test)
 y_pred_proba = prod_model.predict_proba(X_test)
 
+print("Production model loaded successfully")
+
+# Generate and Log Artifacts - Confusion Matrix
 # Confusion Matrix
 cm = confusion_matrix(y_test, y_pred)
 plt.figure(figsize=(8, 6))
@@ -155,10 +169,14 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=iris.target_names
 plt.title('Confusion Matrix - Production Model')
 plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
-plt.savefig('model_artifacts/confusion_matrix.png', bbox_inches='tight', dpi=150)
+plt.savefig('confusion_matrix.png', bbox_inches='tight', dpi=150)
+mlflow.log_artifact('confusion_matrix.png')
+os.remove('confusion_matrix.png')
 plt.close()
-mlflow.log_artifact('model_artifacts/confusion_matrix.png')
 
+print("Confusion matrix saved and logged")
+
+# Generate and Log Artifacts - Feature Importance
 # Feature Importance
 feature_importance = pd.DataFrame({
     'feature': iris.feature_names,
@@ -170,15 +188,20 @@ plt.barh(feature_importance['feature'], feature_importance['importance'])
 plt.xlabel('Importance')
 plt.title('Feature Importance - Production Model')
 plt.gca().invert_yaxis()
-plt.savefig('model_artifacts/feature_importance.png', bbox_inches='tight', dpi=150)
+plt.savefig('feature_importance.png', bbox_inches='tight', dpi=150)
 plt.close()
-mlflow.log_artifact('model_artifacts/feature_importance.png')
+mlflow.log_artifact('feature_importance.png')
+os.remove('feature_importance.png')
 
+print("Feature importance plot saved and logged")
+
+# Generate and Log Artifacts - Classification Report and Metadata
 # Classification Report
 report = classification_report(y_test, y_pred, target_names=iris.target_names, output_dict=True)
 report_df = pd.DataFrame(report).transpose()
-report_df.to_csv('model_artifacts/classification_report.csv')
-mlflow.log_artifact('model_artifacts/classification_report.csv')
+report_df.to_csv('classification_report.csv')
+mlflow.log_artifact('classification_report.csv')
+os.remove('classification_report.csv')
 
 # Model Metadata
 metadata = {
@@ -198,13 +221,14 @@ metadata = {
     "n_samples_train": len(X_train),
     "n_samples_test": len(X_test)
 }
-with open('model_artifacts/model_metadata.json', 'w') as f:
+with open('model_metadata.json', 'w') as f:
     json.dump(metadata, f, indent=2)
-mlflow.log_artifact('model_artifacts/model_metadata.json')
+mlflow.log_artifact('model_metadata.json')
+os.remove('model_metadata.json')
 
-print("Artifacts logged")
+print("Classification report and metadata saved and logged")
 
-# Batch inference test
+# Batch Inference Test
 test_samples = pd.DataFrame({
     'sepal length (cm)': [5.1, 6.7, 4.9],
     'sepal width (cm)': [3.5, 3.0, 2.5],
@@ -215,11 +239,11 @@ test_samples = pd.DataFrame({
 predictions = prod_model.predict(test_samples)
 probabilities = prod_model.predict_proba(test_samples)
 
-print("\nBatch Inference Results:")
+print("Batch Inference Results:")
 print("-" * 50)
 for i, (pred, probs) in enumerate(zip(predictions, probabilities)):
     pred_name = iris.target_names[pred]
     confidence = probs[pred] * 100
     print(f"Sample {i+1}: {pred_name} (confidence: {confidence:.1f}%)")
 
-print("\nMLflow test completed successfully!")
+print("\nBatch inference test completed!")

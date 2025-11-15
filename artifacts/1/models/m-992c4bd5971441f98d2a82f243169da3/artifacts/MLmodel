@@ -1,0 +1,39 @@
+artifact_path: /Users/nawaf/Desktop/ICS 474/ML-Flow-Experiments Jabir/artifacts/1/models/m-992c4bd5971441f98d2a82f243169da3/artifacts
+env_vars:
+- KILOCODE_POSTHOG_API_KEY
+- OPENAI_API_KEY
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+is_signature_from_type_hint: false
+mlflow_version: 3.6.0
+model_id: m-992c4bd5971441f98d2a82f243169da3
+model_size_bytes: 165974
+model_uuid: m-992c4bd5971441f98d2a82f243169da3
+prompts: null
+run_id: 585384dc399b46e8a45f911cceccf56a
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "sepal length (cm)", "required": true}, {"type":
+    "double", "name": "sepal width (cm)", "required": true}, {"type": "double", "name":
+    "petal length (cm)", "required": true}, {"type": "double", "name": "petal width
+    (cm)", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-11-15 10:28:31.310782'
